@@ -1,0 +1,65 @@
+@page "/data-grid-layouts"
+@inject Northwind.NorthwindService northwindService
+
+<div class="column-layout data-grid-layouts-container">
+    <IgbDataGrid DataSource="northwindEmployees" Density="ControlDisplayDensity.Cosy" AutoGenerateColumns="false" SelectionMode="GridSelectionMode.None" DefaultColumnMinWidth="136" class="basic-grid" data-grid-layouts-scope>
+        <IgbNumericColumn Field="EmployeeID" HeaderText="employeeID" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbNumericColumn>
+        <IgbTextColumn Field="LastName" HeaderText="lastName" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="FirstName" HeaderText="firstName" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Title" HeaderText="title" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="TitleOfCourtesy" HeaderText="titleOfCourtesy" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbDateTimeColumn Field="BirthDate" HeaderText="birthDate" IsEditable="true" IsFilteringEnabled="true" DateTimeFormat="DateTimeFormats.DateShort" class="style_1" data-grid-layouts-scope></IgbDateTimeColumn>
+        <IgbDateTimeColumn Field="HireDate" HeaderText="hireDate" IsEditable="true" IsFilteringEnabled="true" DateTimeFormat="DateTimeFormats.DateShort" class="style_1" data-grid-layouts-scope></IgbDateTimeColumn>
+        <IgbTextColumn Field="Address.Street" HeaderText="street" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.City" HeaderText="city" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Region" HeaderText="region" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.PostalCode" HeaderText="postalCode" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Country" HeaderText="country" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Phone" HeaderText="phone" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbNumericColumn Field="ManagerID" HeaderText="managerID" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbNumericColumn>
+        <IgbTextColumn Field="Notes" HeaderText="notes" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="AvatarUrl" HeaderText="avatarUrl" IsEditable="true" IsFilteringEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+    </IgbDataGrid>
+    <IgbDataGrid DataSource="northwindEmployees" Density="ControlDisplayDensity.Cosy" SelectionMode="GridSelectionMode.multiple" ColumnMovingMode="ColumnMovingMode.Deferred" AutoGenerateColumns="false" DefaultColumnMinWidth="136" class="basic-grid" data-grid-layouts-scope>
+        <IgbDataGridToolbar ToolbarTitle="Grid Toolbar">
+            <span>GridToolbarActions not yet available in Blazor</span>
+        </IgbDataGridToolbar>
+        @if (columnVisible)
+        {
+            <IgbNumericColumn Field="EmployeeID" HeaderText="employeeID" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbNumericColumn>
+        }
+        @if (columnVisible1)
+        {
+            <IgbTextColumn Field="LastName" HeaderText="lastName" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        }
+        @if (columnVisible2)
+        {
+            <IgbTextColumn Field="Address.City" HeaderText="city" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        }
+        <IgbTextColumn Field="FirstName" HeaderText="firstName" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Title" HeaderText="title" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="TitleOfCourtesy" HeaderText="titleOfCourtesy" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbDateTimeColumn Field="BirthDate" HeaderText="birthDate" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" DateTimeFormat="DateTimeFormats.DateShort" class="style_1" data-grid-layouts-scope></IgbDateTimeColumn>
+        <IgbDateTimeColumn Field="HireDate" HeaderText="hireDate" IsFilteringEnabled="true" IsResizingEnabled="true" DateTimeFormat="DateTimeFormats.DateShort" class="style_1" data-grid-layouts-scope></IgbDateTimeColumn>
+        <IgbTextColumn Field="Address.Street" HeaderText="street" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Region" HeaderText="region" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.PostalCode" HeaderText="postalCode" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Country" HeaderText="country" Pinned="PinnedPositions.Left" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="Address.Phone" HeaderText="phone" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbNumericColumn Field="ManagerID" HeaderText="managerID" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbNumericColumn>
+        <IgbTextColumn Field="Notes" HeaderText="notes" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+        <IgbTextColumn Field="AvatarUrl" HeaderText="avatarUrl" IsEditable="true" IsFilteringEnabled="true" IsResizingEnabled="true" class="style_1" data-grid-layouts-scope></IgbTextColumn>
+    </IgbDataGrid>
+</div>
+
+@code {
+    private Northwind.EmployeesType[] northwindEmployees = Array.Empty<Northwind.EmployeesType>();
+    private bool columnVisible = false;
+    private bool columnVisible1 = false;
+    private bool columnVisible2 = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        northwindEmployees = await this.northwindService.GetEmployees() ?? northwindEmployees;
+    }
+}

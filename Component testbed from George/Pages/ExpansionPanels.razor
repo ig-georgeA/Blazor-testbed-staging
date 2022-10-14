@@ -1,0 +1,164 @@
+@page "/expansion-panels"
+
+<div class="row-layout expansion-panels-container">
+    <div class="row-layout group">
+        <div class="column-layout group_1">
+            <IgbCard Outlined="true" class="card" expansion-panels-scope>
+                <IgbCardHeader>
+                    <div slot="thumbnail">
+                        <IgbAvatar Src="assets/Avatar9.png" Size="SizableComponentSize.Medium" Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope></IgbAvatar>
+                    </div>
+                    <h3 slot="title">
+                        FirstName LastName
+                    </h3>
+                    <h5 slot="subtitle">
+                        myemail@@email.com
+                    </h5>
+                </IgbCardHeader>
+                <IgbCardActions class="actions-content" expansion-panels-scope>
+                    <IgbButton Variant="ButtonVariant.Flat" class="button" expansion-panels-scope>
+                        <span class="material-icons">
+                            exit_to_app
+                        </span>
+                        <span>Sign out</span>
+                        <IgbRipple></IgbRipple>
+                    </IgbButton>
+                </IgbCardActions>
+            </IgbCard>
+            <IgbExpansionPanel class="expansion-panel" expansion-panels-scope>
+                <IgbList class="list" expansion-panels-scope>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">folder</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Title goes here</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">folder</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Title goes here</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">folder</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Title goes here</div>
+                    </IgbListItem>
+                </IgbList>
+                <span slot="title">Title goes here...</span>
+            </IgbExpansionPanel>
+            <IgbExpansionPanel Open="true" class="expansion-panel" expansion-panels-scope>
+                <IgbList class="list" expansion-panels-scope>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">person</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">User profile</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">assessment</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Analytics</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">book</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Favorites</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">people</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Shared with others</div>
+                    </IgbListItem>
+                </IgbList>
+                <span slot="title">Title goes here...</span>
+            </IgbExpansionPanel>
+            <IgbExpansionPanel Open="true" class="expansion-panel" expansion-panels-scope>
+                <IgbList class="list" expansion-panels-scope>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">palette</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Theme</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">vpn_key</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Change password</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">call_split</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Mail rules</div>
+                    </IgbListItem>
+                    <IgbListItem>
+                        <div slot="start">
+                            <IgbAvatar Shape="AvatarShape.Circle" class="avatar" expansion-panels-scope>
+                                <span class="material-icons">forum</span>
+                            </IgbAvatar>
+                        </div>
+                        <div slot="title">Chat preferences</div>
+                    </IgbListItem>
+                </IgbList>
+                <span slot="title">Title goes here...</span>
+            </IgbExpansionPanel>
+        </div>
+    </div>
+    <div class="row-layout row-layout-1">
+        <div class="column-layout column-layout-1">
+            <h5 class="title-1">
+                Sign in
+            </h5>
+            <IgbInput Label="Username" Outlined="false" class="user-input" expansion-panels-scope></IgbInput>
+            <IgbInput DisplayType="InputType.Password" Label="Password" Outlined="false" class="user-input_1" expansion-panels-scope></IgbInput>
+            <div class="row-layout row-layout-2">
+                <IgbCheckbox LabelPosition="CheckboxBaseLabelPosition.After" class="checkbox-1" expansion-panels-scope>
+                    Remember me
+                </IgbCheckbox>
+                <a href class="typography__body-1 hyperlink">
+                    Forgot password?
+                </a>
+            </div>
+            <IgbButton class="user-input" expansion-panels-scope>
+                Sign in
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <IgbButton Variant="ButtonVariant.Outlined" class="user-input_1" expansion-panels-scope>
+                Create a new account
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <p class="typography__caption text-2">
+                By signing in, you are agreeing to our terms of use and privacy policy
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+}
